@@ -118,21 +118,15 @@ var getRandomArbitrary = function() {
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
-var finder = (num, arr )=>{
-  var isTrue = false;
-  for(var i =0; i<num.length; i+=1){
-    if (arr[i] === num){
-      isTrue ===true;
+var finder = (arr)=>{
+  var randomNumber = getRandomArbitrary();
+  for(var i =0; i<arr.length; i+=1){
+    if (arr[i] === randomNumber){
+      return true;
     }
   }
-  if (isTrue = true){
-    return true;
-  }else{
     return false;
   }
-
-}
-
 
 
 //Next Problem
@@ -155,7 +149,19 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
+var removeItem = (myGroceryList, item) =>{
+  for(var i =0; i<myGroceryList.length; i+=1){
+    if (myGroceryList[i] === item){
+      myGroceryList.splice(i, 1);
+    }
+  }
+  return myGroceryList;
+}
 
+var addItem = (myGroceryList, item) =>{
+myGroceryList.push(item);
+return myGroceryList;
+}
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
@@ -168,7 +174,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
   //Code Here
-
+var maker = () =>{
+  var array = [];
+  for(var i=1; i<216; i+=1){
+    array.push(i);
+  }
+  return array;
+}
 
 
 //Next Problem
@@ -179,7 +191,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
-
+var addTen = (numbers) =>{
+  var newarr = [];
+  for(var i =0; i<numbers.length; i+=1){
+    newarr.push(Number(numbers[i])+ 10);
+  }
+  return newarr;
+}
 
 
 //Next Problem
@@ -200,7 +218,7 @@ for(var i = 0; i < num2; i++){
 //Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
   //Code Here
-
+var longer = (arr1, arr2) =>arr1.length>arr2.length?arr1:arr2;
 
 /*
 As a continuation of the previous problem, write another function called 'both'.
@@ -213,7 +231,17 @@ Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
   //Code Here
-
+var both = (arr1, arr2) =>{
+  var newArray =[];
+  for(var i =0; i<arr1.length; i+=1){
+    for(var x =0; x<arr2.length; x+=1){
+      if(arr1[i] === arr2[x]){
+          newArray.push(arr1[i]);
+      }
+    }
+  }
+  return newArray;
+}
 
 
 
@@ -253,12 +281,21 @@ array with those four objects. After that console.log the length of the Array an
 sure that it's equal to 4. */
 
   //Code Here
+  devMountainEmployees.push(tyler);
+  devMountainEmployees.push(cahlan);
+  devMountainEmployees.push(ryan);
+  devMountainEmployees.push(colt);
+  console.log(devMountainEmployees.length);
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
-
+for(var i=0; i<devMountainEmployees.length; i+=1){
+  if(devMountainEmployees[i] === cahlan){
+    devMountainEmployees.splice(i, 1);
+  }
+}
 
 
 
@@ -271,7 +308,7 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
-
+var users = [];
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
 
@@ -284,6 +321,22 @@ var user1 = {
 };
 
 //Your Code Here
+var user2 = {
+  name: 'fancy name',
+  email: 'someEmail@gmail.com',
+  password: 'iLoveJavaScript',
+  username: 'infiniateLoop'
+};
+var user3 = {
+  name: 'name',
+  email: 'email@gmail.com',
+  password: 'iLoveJavaScript',
+  username: 'infiniateLoop'
+};
+
+users.push(user1);
+users.push(user2);
+users.push(user3);
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -294,5 +347,10 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
+for(var i =0; i<users.length; i+=1){
+  if(users[i].email === 'tylermcginnis33@gmail.com'){
+    users.splice(i, 1);
+  }
+}
 
 //The activity we just did is very much how data works in 'the real world'.
