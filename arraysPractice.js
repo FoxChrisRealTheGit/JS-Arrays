@@ -5,7 +5,7 @@ var arr = [10,20,30];
 //Create a function named 'first' that is given 'arr' as the argument and  returns the first item in the given array.
 
   //Code Here
-
+var first = (arr) => arr[0];
 
 //Next problem
 
@@ -16,7 +16,7 @@ var arr = [40,50,60];
 
 
   //Code Here
-
+var last = arr => arr[arr.length -1];
 
 //Next Problem
 
@@ -25,7 +25,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
   //Code Here
-
+var looper = family =>{
+for(var i=0; i<family.length; i+=1){
+alert(family[i]);
+}
+}
 
 //Next problem
 
@@ -35,7 +39,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 //Write a function called reversedLooper that is given letters as it's only argument and loops through the given array backwards alerting every item in the array starting at the end.
 
   //Code Here
-
+var reversedLooper = letters =>{
+  for(var i = letters.length -1; i>=0; i-=1){
+    alert(letters[i]);
+  }
+}
 
 //Next Problem
 
@@ -45,7 +53,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
   //Code Here
 
-
+var evenFinder = nums =>{
+  var newArr=[];
+  for(var i =0; i<nums.length; i+=1){
+    if (nums[i]%2 ===0){
+      newArr.push(nums[i]);
+    }
+  }
+  return newArr;
+}
 
 
   
@@ -73,7 +89,22 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 
   //Code Here
+var divider = numbersArray =>{
+  var evens =[];
+  var odds =[];
+  var newArr =[];
+  for(var i =0; i<numbersArray.length; i+=1){
+    if(numbersArray[i]%2 === 0){
+      evens.push(numbersArray[i]);
+    }else{
+      odds.push(numbersArray[i]);
 
+    }
+  }
+  newArr.push(evens);
+  newArr.push(odds);
+  return newArr;
+}
 
 //Next Problem
 
@@ -87,7 +118,20 @@ var getRandomArbitrary = function() {
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
+var finder = (num, arr )=>{
+  var isTrue = false;
+  for(var i =0; i<num.length; i+=1){
+    if (arr[i] === num){
+      isTrue ===true;
+    }
+  }
+  if (isTrue = true){
+    return true;
+  }else{
+    return false;
+  }
 
+}
 
 
 
